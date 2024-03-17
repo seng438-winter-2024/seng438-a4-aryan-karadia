@@ -1,0 +1,273 @@
+{
+  "id": "2eeeb8ec-7d3d-4f7b-be26-d791508fdc3b",
+  "version": "2.0",
+  "name": "SENG438-A4",
+  "url": "https://www.ebay.ca/",
+  "tests": [{
+    "id": "d145c282-201e-4e5b-ba3e-322cef4c064c",
+    "name": "LogInWIthInvalidUser",
+    "commands": [{
+      "id": "e5d8747c-16b3-4fff-adca-7d19e97dec1b",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ebay.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "508ab3f6-afef-408b-8cb6-9a9016474640",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1918x1078",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e331d479-b9c0-4389-a733-b6e5bf003a1d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign in",
+      "targets": [
+        ["linkText=Sign in", "linkText"],
+        ["css=#gh-ug > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign in')]", "xpath:link"],
+        ["xpath=//span[@id='gh-ug']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://signin.ebay.ca/ws/eBayISAPI.dll?SignIn&ru=https%3A%2F%2Fwww.ebay.ca%2F')]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "76bff0a9-861f-4fd3-9c13-af4cf4df42d5",
+      "comment": "",
+      "command": "click",
+      "target": "id=userid",
+      "targets": [
+        ["id=userid", "id"],
+        ["name=userid", "name"],
+        ["css=#userid", "css:finder"],
+        ["xpath=//input[@id='userid']", "xpath:attributes"],
+        ["xpath=//form[@id='signin-form']/div/div/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa2713cf-1e95-40c4-bde2-2307493fd49e",
+      "comment": "",
+      "command": "type",
+      "target": "id=userid",
+      "targets": [
+        ["id=userid", "id"],
+        ["name=userid", "name"],
+        ["css=#userid", "css:finder"],
+        ["xpath=//input[@id='userid']", "xpath:attributes"],
+        ["xpath=//form[@id='signin-form']/div/div/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "wrongemail@gmail.com"
+    }, {
+      "id": "90d4266d-f3d7-4e67-a351-74103e7676fc",
+      "comment": "",
+      "command": "click",
+      "target": "id=signin-continue-btn",
+      "targets": [
+        ["id=signin-continue-btn", "id"],
+        ["name=signin-continue-btn", "name"],
+        ["css=#signin-continue-btn", "css:finder"],
+        ["xpath=//button[@id='signin-continue-btn']", "xpath:attributes"],
+        ["xpath=//form[@id='signin-form']/div/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1d61394-2114-4aa3-bc55-c5d88edc0231",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=signin-continue-btn",
+      "targets": [
+        ["id=signin-continue-btn", "id"],
+        ["name=signin-continue-btn", "name"],
+        ["css=#signin-continue-btn", "css:finder"],
+        ["xpath=//button[@id='signin-continue-btn']", "xpath:attributes"],
+        ["xpath=//form[@id='signin-form']/div/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a31f74b0-d956-431f-ac1e-5f5e6ac63f63",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=signin-continue-btn",
+      "targets": [
+        ["id=signin-continue-btn", "id"],
+        ["name=signin-continue-btn", "name"],
+        ["css=#signin-continue-btn", "css:finder"],
+        ["xpath=//button[@id='signin-continue-btn']", "xpath:attributes"],
+        ["xpath=//form[@id='signin-form']/div/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7116b6bb-b4d8-48b9-ae18-f2c00c659b6e",
+      "comment": "Alert made when no ebay account associated with email",
+      "command": "assertElementPresent",
+      "target": "id=signin-error-msg",
+      "targets": [
+        ["id=signin-error-msg", "id"],
+        ["css=#signin-error-msg", "css:finder"],
+        ["xpath=//p[@id='signin-error-msg']", "xpath:attributes"],
+        ["xpath=//form[@id='signin-form']/div/div/div/div/div/span[2]/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": "We couldn't find this eBay account."
+    }]
+  }, {
+    "id": "c6c3d348-b749-4c7f-9cc9-6d4793fe367f",
+    "name": "AddMaxAmountOfProductToCart",
+    "commands": [{
+      "id": "3d30528b-dd91-457c-bee0-ad1242eb72fd",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ebay.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "406ee305-d13e-4fd2-83b8-5c1b6a55c805",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1918x1078",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5917e010-8b83-4853-90c3-3c6e0f1b035b",
+      "comment": "",
+      "command": "click",
+      "target": "id=gh-ac",
+      "targets": [
+        ["id=gh-ac", "id"],
+        ["name=_nkw", "name"],
+        ["css=#gh-ac", "css:finder"],
+        ["xpath=//input[@id='gh-ac']", "xpath:attributes"],
+        ["xpath=//div[@id='gh-ac-box2']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5a6d37e-cf44-4bdf-9d6c-743a13ced7d7",
+      "comment": "",
+      "command": "type",
+      "target": "id=gh-ac",
+      "targets": [
+        ["id=gh-ac", "id"],
+        ["name=_nkw", "name"],
+        ["css=#gh-ac", "css:finder"],
+        ["xpath=//input[@id='gh-ac']", "xpath:attributes"],
+        ["xpath=//div[@id='gh-ac-box2']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "2011 civic exhaust"
+    }, {
+      "id": "11afd72d-2baf-4356-8991-a98c55beb5e9",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=gh-ac",
+      "targets": [
+        ["id=gh-ac", "id"],
+        ["name=_nkw", "name"],
+        ["css=#gh-ac", "css:finder"],
+        ["xpath=//input[@id='gh-ac']", "xpath:attributes"],
+        ["xpath=//div[@id='gh-ac-box2']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "b180046b-f1fd-4d70-8d34-6296e6af180b",
+      "comment": "",
+      "command": "click",
+      "target": "css=#item366c5d6035 .s-item__title > span",
+      "targets": [
+        ["css=#item366c5d6035 .s-item__title > span", "css:finder"],
+        ["xpath=//li[@id='item366c5d6035']/div/div[2]/a/div/span", "xpath:idRelative"],
+        ["xpath=//li[3]/div/div[2]/a/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'For 06-11 Honda Civic EX/LX/DX FG1 1.8 4\" Tip Muffler S.S Racing Catback Exhaust (For: 2011 Civic)')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win9944",
+      "windowTimeout": 2000
+    }, {
+      "id": "af4b8138-25d8-42d2-b381-7fa70b6900e6",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win9944}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8da9e49d-9d7a-48f8-9351-56e25d06a4ca",
+      "comment": "",
+      "command": "click",
+      "target": "id=qtyTextBox",
+      "targets": [
+        ["id=qtyTextBox", "id"],
+        ["name=quantity", "name"],
+        ["css=#qtyTextBox", "css:finder"],
+        ["xpath=//input[@id='qtyTextBox']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div/div[5]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//div/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "04589e24-27c7-48dd-ab37-001aac0a1a8d",
+      "comment": "",
+      "command": "type",
+      "target": "id=qtyTextBox",
+      "targets": [
+        ["id=qtyTextBox", "id"],
+        ["name=quantity", "name"],
+        ["css=#qtyTextBox", "css:finder"],
+        ["xpath=//input[@id='qtyTextBox']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div/div[5]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//div/span/input", "xpath:position"]
+      ],
+      "value": "100"
+    }, {
+      "id": "e337435e-38ac-48df-8c0a-ff4fcf05c027",
+      "comment": "",
+      "command": "click",
+      "target": "id=binBtn_btn_1",
+      "targets": [
+        ["id=binBtn_btn_1", "id"],
+        ["linkText=Buy It Now", "linkText"],
+        ["css=#binBtn_btn_1", "css:finder"],
+        ["xpath=//a[@id='binBtn_btn_1']", "xpath:attributes"],
+        ["xpath=//div[@id='mainContent']/div[2]/div/div/div[2]/ul/li/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.ebay.ca/atc/binctr?item=233746292789&quantity=1&fromPage=4429486&rev=31&fb=1&gch=1')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Buy It Now')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "13e193f2-702d-4165-b891-c63d6a8377bd",
+      "comment": "Asserts quantity is too high and won't let user add to cart",
+      "command": "assertElementPresent",
+      "target": "css=#qtyErrMsg > .ux-textspans",
+      "targets": [
+        ["css=#qtyErrMsg > .ux-textspans", "css:finder"],
+        ["xpath=//div[@id='qtyErrMsg']/span", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Please enter a lower number')]", "xpath:innerText"]
+      ],
+      "value": "Please enter a lower number"
+    }]
+  }],
+  "suites": [{
+    "id": "c4a2410b-5ab4-4db9-a467-ea9164db5917",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.samsung.com/", "https://www.ebay.ca/"],
+  "plugins": []
+}
