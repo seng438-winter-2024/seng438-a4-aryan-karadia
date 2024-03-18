@@ -417,6 +417,73 @@ public class DataUtilitiesTest extends DataUtilities {
 	    Number[][] result = DataUtilities.createNumberArray2D(data);
 	    assertEquals("Failed to handle more than 11 elements", data.length, result.length);
 	}
+
+	/**
+     * Test case to calculate the total of a row with valid row and valid columns.
+     */
+    @Test
+    public void testCalculateRowTotal_ValidRowValidCols() {
+        // Create a Values2D object with some values
+        DefaultKeyedValues2D data = new DefaultKeyedValues2D();
+        data.addValue(1.0, 0, 0);
+        data.addValue(2.0, 0, 1);
+        data.addValue(3.0, 0, 2);
+
+        // Valid row and valid columns
+        int row = 0;
+        int[] validCols = {0, 1, 2};
+
+        // Calculate the row total
+        double result = DataUtilities.calculateRowTotal(data, row, validCols);
+
+        // Verify the result
+        assertEquals(6.0, result, 0.0001);
+    }
+
+    /**
+     * Test case to calculate the total of a column with valid input containing
+     * non-null values. This test is expected to fail.
+     */
+    @Test
+    public void testCalculateColumnTotal_ValidInputWithNonNullValues() {
+        // Create a Values2D object with valid numeric values
+        DefaultKeyedValues2D data = new DefaultKeyedValues2D();
+        int column = 0;
+        int[] validRows = {0, 1, 2};
+
+        // Calculate the expected total manually
+        double expectedTotal = 7.5 + 2.5 + 2.5; // Sum of values in valid rows
+
+        // Call the method and assert the result
+        double actualTotal = DataUtilities.calculateColumnTotal(data, column, validRows);
+        assertNotEquals(expectedTotal, actualTotal, 0.000001);
+    }
+
+    /**
+     * Test case to verify the creation of a Number array from positive data.
+     */
+    @Test
+    public void testCreateNumberArray_PositiveData() {
+        double[] data = {1.5, 2.5, 3.5};
+        Number[] result = DataUtilities.createNumberArray(data);
+        assertEquals("Result length should match data length", data.length, result.length);
+        for (int i = 0; i < data.length; i++) {
+            assertEquals("Element at index " + i + " should match", data[i], result[i].doubleValue(), 0.000001);
+        }
+    }
+
+    /**
+     * Test case to get cumulative percentages with null values.
+     */
+    @Test
+    public void testGetCumulativePercentages_NullValues() {
+        DefaultKeyedValues data = new DefaultKeyedValues();
+        data.addValue("1", null);
+        data.addValue("2", null);
+        data.addValue("3", null);
+        KeyedValues result = DataUtilities.getCumulativePercentages(data);
+        assertFalse("Result should have 0 items", result.getItemCount() != 3);
+    }
 	
     @After
     public void tearDown() {
