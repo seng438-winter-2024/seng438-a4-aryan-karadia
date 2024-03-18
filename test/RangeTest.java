@@ -230,39 +230,7 @@ public class RangeTest {
         assertNotNull("Valid range should not be null", validRange);
     }
     
-//    @Test
-//    public void testIntersects() {
-//        // Creating two ranges that intersect
-//        Range range1 = new Range(1, 5);
-//        Range range2 = new Range(3, 7);
-//        assertTrue("Ranges should intersect", range1.intersects(range2));
-//
-//        // Creating two ranges that do not intersect
-//        Range range3 = new Range(1, 5);
-//        Range range4 = new Range(6, 10);
-//        assertFalse("Ranges should not intersect", range3.intersects(range4));
-//
-//        // Creating two ranges where one range contains the other
-//        Range range5 = new Range(1, 10);
-//        Range range6 = new Range(2, 8);
-//        assertTrue("Ranges should intersect", range5.intersects(range6));
-//
-//        // Creating two ranges where they share a boundary
-//        Range range7 = new Range(1, 5);
-//        Range range8 = new Range(5, 10);
-//        assertTrue("Ranges should intersect", range7.intersects(range8));
-//
-//        // Creating two ranges with one common point
-//        Range range9 = new Range(1, 5);
-//        Range range10 = new Range(5, 10);
-//        assertTrue("Ranges should intersect", range9.intersects(range10));
-//
-//        // Creating two ranges where one range is completely within the other
-//        Range range11 = new Range(1, 10);
-//        Range range12 = new Range(2, 8);
-//        assertTrue("Ranges should intersect", range11.intersects(range12));
-//    }
-    
+
     @Test
     public void testCombine() {
         // Creating ranges
@@ -272,6 +240,7 @@ public class RangeTest {
         Range range4 = new Range(8, 12);
         Range range5 = new Range(-5, -1);
         Range range6 = new Range(-10, -6);
+        Range range7 = new Range(-3, 3);
 
         // Testing when one range is null
         assertEquals("Should return non-null range", range1, Range.combine(range1, null));
@@ -295,74 +264,11 @@ public class RangeTest {
         // Testing when ranges have negative bounds
         Range result4 = Range.combine(range5, range6);
         assertEquals("Should return combined range with negative bounds", new Range(-10, -1), result4);
+        
+        Range result5 = Range.combine(range1, range7);
+        assertEquals("Should return combined range with negative lower bound and positive upper bound", new Range(-3, 5), result5);
+
     }
-    
-//    @Test
-//    public void testCombineIgnoringNaN() {
-//        // Creating ranges
-//        Range range1 = new Range(1, 5);
-//        Range range2 = new Range(3, 7);
-//        Range range3 = new Range(Double.NaN, 10);
-//        Range range4 = new Range(8, Double.NaN);
-//        Range range5 = new Range(Double.NaN, Double.NaN);
-//
-//        // Testing when one range is null
-//        assertEquals("Should return non-null range", range1, Range.combineIgnoringNaN(range1, null));
-//        assertEquals("Should return non-null range", range2, Range.combineIgnoringNaN(null, range2));
-//
-//        // Testing when both ranges are null
-//        assertNull("Should return null", Range.combineIgnoringNaN(null, null));
-//
-//        // Testing when ranges do not overlap
-//        Range result1 = Range.combineIgnoringNaN(range1, range3);
-//        assertEquals("Should return combined range", new Range(1, 10), result1);
-//
-//        // Testing when ranges overlap partially
-//        Range result2 = Range.combineIgnoringNaN(range1, range4);
-//        assertEquals("Should return combined range", new Range(1, 8), result2);
-//
-//        // Testing when ranges are identical
-//        Range result3 = Range.combineIgnoringNaN(range1, range1);
-//        assertEquals("Should return identical range", range1, result3);
-//
-//        // Testing when ranges have NaN bounds
-//        Range result4 = Range.combineIgnoringNaN(range3, range4);
-//        assertNull("Should return null because of NaN bounds", result4);
-//
-//        // Testing when ranges have NaN bounds for both lower and upper
-//        Range result5 = Range.combineIgnoringNaN(range4, range5);
-//        assertNull("Should return null because of NaN bounds for both lower and upper", result5);
-//    }
-    
-//    @Test
-//    public void testExpand() {
-//        // Creating a range
-//        Range originalRange = new Range(0, 10);
-//
-//        // Testing with positive margins
-//        Range expandedRange1 = Range.expand(originalRange, 0.1, 0.2);
-//        assertEquals("Lower bound should be expanded correctly", -1, expandedRange1.getLowerBound(), 0.000001);
-//        assertEquals("Upper bound should be expanded correctly", 11, expandedRange1.getUpperBound(), 0.000001);
-//
-//        // Testing with negative margins
-//        Range expandedRange2 = Range.expand(originalRange, -0.2, -0.1);
-//        assertEquals("Lower bound should be expanded correctly", 2, expandedRange2.getLowerBound(), 0.000001);
-//        assertEquals("Upper bound should be expanded correctly", 8, expandedRange2.getUpperBound(), 0.000001);
-//
-//        // Testing with one negative and one positive margin
-//        Range expandedRange3 = Range.expand(originalRange, -0.1, 0.2);
-//        assertEquals("Lower bound should be expanded correctly", 1, expandedRange3.getLowerBound(), 0.000001);
-//        assertEquals("Upper bound should be expanded correctly", 11, expandedRange3.getUpperBound(), 0.000001);
-//
-//        // Testing with zero margins
-//        Range expandedRange4 = Range.expand(originalRange, 0, 0);
-//        assertEquals("Range should remain the same", originalRange, expandedRange4);
-//
-//        // Testing with zero length range
-//        Range zeroLengthRange = new Range(5, 5);
-//        Range expandedRange5 = Range.expand(zeroLengthRange, 0.1, 0.2);
-//        assertEquals("Range should remain the same", zeroLengthRange, expandedRange5);
-//    }
     
     @Test
     public void testExpandToInclude() {
@@ -445,34 +351,6 @@ public class RangeTest {
         Range expected = new Range(-10.0, 15.0);
         assertEquals("Range shift with no zero crossing", expected, resultRange);
     }
-    
-//    @Test
-//    public void testScale() {
-//        // Creating a base range
-//        Range baseRange = new Range(0, 10);
-//
-//        // Scaling the base range by a factor of 2
-//        Range scaledRange1 = Range.scale(baseRange, 2);
-//        assertEquals("Lower bound should be scaled by a factor of 2", 0, scaledRange1.getLowerBound(), 0.000001);
-//        assertEquals("Upper bound should be scaled by a factor of 2", 20, scaledRange1.getUpperBound(), 0.000001);
-//
-//        // Scaling the base range by a factor of 0.5
-//        Range scaledRange2 = Range.scale(baseRange, 0.5);
-//        assertEquals("Lower bound should be scaled by a factor of 0.5", 0, scaledRange2.getLowerBound(), 0.000001);
-//        assertEquals("Upper bound should be scaled by a factor of 0.5", 5, scaledRange2.getUpperBound(), 0.000001);
-//
-//        // Scaling the base range by a factor of 1 (no change)
-//        Range scaledRange3 = Range.scale(baseRange, 1);
-//        assertEquals("Range should remain unchanged", baseRange, scaledRange3);
-//
-//        // Testing scaling with a negative factor (should throw an exception)
-//        try {
-////            Range scaledRange4 = Range.scale(baseRange, -1);
-//            fail("Expected IllegalArgumentException was not thrown for negative factor");
-//        } catch (IllegalArgumentException e) {
-//            assertEquals("Wrong exception message", "Negative 'factor' argument.", e.getMessage());
-//        }
-//    }
     
     @Test (expected = IllegalArgumentException.class)
     public void testInvalidFactorScale() {
@@ -578,23 +456,7 @@ public class RangeTest {
         Range range2 = null;
         assertNull(Range.combineIgnoringNaN(range1, range2));
     }
-    
-//    @Test
-//    public void testCombineUsingNullFirstValidSecondNaN() {
-//        // Test case 3: Both range1 and range2 are non-null, but resulting range is NaN range
-//        Range range1 = new Range(5.0, 10.0);
-//        Range range2 = new Range(Double.NaN, Double.NaN);
-//        assertNull(Range.combineIgnoringNaN(range1, range2));
-//    }
-    
-//    @Test
-//    public void testCombineUsingNullSecondValidFirstNaN() {
-//        // Test case 4: Both range1 and range2 are non-null, resulting range is NaN range
-//        Range range1 = new Range(Double.NaN, Double.NaN);
-//        Range range2 = new Range(5.0, 10.0);
-//        assertNull(Range.combineIgnoringNaN(range1, range2));
-//    }
-    
+        
     @Test
     public void testCombineWithTwoNaN() {
     	Range NaNRange = new Range(Double.NaN, Double.NaN);
@@ -705,9 +567,63 @@ public class RangeTest {
             fail("IllegalArgumentException should not be thrown for non-negative factor");
         }
     }
+        
+	@Test
+	public void testIntersectsWithRangeAsParameter() {
+		Range range1 = new Range (3.0, 6.0);
+		Range range2 = new Range (3.5, 4.5);
+		assertTrue(range1.intersects(range2));
+        assertFalse(range1.intersects(0.0, 1.0));
+	}
 	
+    @Test
+    public void testToString() {
+        Range range1 = new Range(1.0, 5.0);
+        assertEquals("Range[1.0,5.0]", range1.toString());
+
+        Range range2 = new Range(-2.5, 3.8);
+        assertEquals("Range[-2.5,3.8]", range2.toString());
+
+        Range range3 = new Range(0.0, 0.0);
+        assertEquals("Range[0.0,0.0]", range3.toString());
+    }
+    
+    @Test
+    public void testCombineIgnoringNaN_NullRange1() {
+        // range1 is null, return range2
+        Range range2 = new Range(1.0, 5.0);
+        assertEquals(range2, Range.combineIgnoringNaN(null, range2));
+    }
+
+    @Test
+    public void testCombineIgnoringNaN_NullRange2() {
+        // range2 is null, return range1
+        Range range1 = new Range(-2.5, 3.8);
+        assertEquals(range1, Range.combineIgnoringNaN(range1, null));
+    }
+
+    @Test
+    public void testCombineIgnoringNaN_BothRangesNull() {
+        // both ranges are null, should return null
+        assertNull(Range.combineIgnoringNaN(null, null));
+    }
+
+    @Test
+    public void testCombineIgnoringNaN_BothRangesNaN() {
+        // both ranges are NaN, should return null
+        Range range1 = new Range(Double.NaN, Double.NaN);
+        Range range2 = new Range(Double.NaN, Double.NaN);
+        assertNull(Range.combineIgnoringNaN(range1, range2));
+    }
+
+    @Test
+    public void testCombineIgnoringNaN_NoNaN() {
+        // none of the ranges is NaN, return new Range(l,u)
+        Range range1 = new Range(1.0, 3.0);
+        Range range2 = new Range(2.0, 5.0);
+        Range expected = new Range(1.0, 5.0);
+        assertEquals(expected, Range.combineIgnoringNaN(range1, range2));
+    }
 	
-
-
    
 }
