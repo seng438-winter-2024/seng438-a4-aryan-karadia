@@ -1,0 +1,158 @@
+{
+  "id": "ca4d69e1-a572-42d8-a773-4629b7900a8b",
+  "version": "2.0",
+  "name": "filterSearch",
+  "url": "https://www.ebay.ca",
+  "tests": [{
+    "id": "345b0993-92a6-4945-86dc-782584438c12",
+    "name": "T1",
+    "commands": [{
+      "id": "b7b90f66-bd90-40f2-abc3-cd191ae63fcb",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4ace9f55-a79e-4642-8d60-dbf642ac17fd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1716x974",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "138a9272-810d-4d5d-8f3e-469d81cf5860",
+      "comment": "",
+      "command": "click",
+      "target": "id=gh-as-a",
+      "targets": [
+        ["id=gh-as-a", "id"],
+        ["linkText=Advanced", "linkText"],
+        ["css=#gh-as-a", "css:finder"],
+        ["xpath=//a[contains(text(),'Advanced')]", "xpath:link"],
+        ["xpath=//a[@id='gh-as-a']", "xpath:attributes"],
+        ["xpath=//td[@id='gh-as-td']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.ebay.ca/sch/ebayadvsearch')]", "xpath:href"],
+        ["xpath=//td[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Advanced')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "46fb4ad2-d543-457b-92e7-2bf864ec5a2c",
+      "comment": "",
+      "command": "click",
+      "target": "id=_nkw",
+      "targets": [
+        ["id=_nkw", "id"],
+        ["css=#\\_nkw", "css:finder"],
+        ["xpath=//input[@id='_nkw']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "32ceaf23-7c14-4ad9-9c56-04c8815e93df",
+      "comment": "",
+      "command": "type",
+      "target": "id=_nkw",
+      "targets": [
+        ["id=_nkw", "id"],
+        ["css=#\\_nkw", "css:finder"],
+        ["xpath=//input[@id='_nkw']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "pokemon cards"
+    }, {
+      "id": "e155478e-1749-4368-a67b-f828b407dbbc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.adv-field___in_kw > .field__label",
+      "targets": [
+        ["css=.adv-field___in_kw > .field__label", "css:finder"],
+        ["xpath=//div[2]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Keyword options')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "504e284a-9a79-4c22-a1fe-9ddb0c64d4b0",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,200)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2bacf672-803b-400c-96a9-9cc2945687d2",
+      "comment": "",
+      "command": "click",
+      "target": "id=s0-1-17-5[2]-@range-comp[]-@range-textbox[]-textbox",
+      "targets": [
+        ["id=s0-1-17-5[2]-@range-comp[]-@range-textbox[]-textbox", "id"],
+        ["name=_udlo", "name"],
+        ["css=#s0-1-17-5\\[2\\]-\\@range-comp\\[\\]-\\@range-textbox\\[\\]-textbox", "css:finder"],
+        ["xpath=//input[@id='s0-1-17-5[2]-@range-comp[]-@range-textbox[]-textbox']", "xpath:attributes"],
+        ["xpath=//span[2]/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "800222ca-81c5-467a-a8d0-399932164e47",
+      "comment": "",
+      "command": "type",
+      "target": "id=s0-1-17-5[2]-@range-comp[]-@range-textbox[]-textbox",
+      "targets": [
+        ["id=s0-1-17-5[2]-@range-comp[]-@range-textbox[]-textbox", "id"],
+        ["name=_udlo", "name"],
+        ["css=#s0-1-17-5\\[2\\]-\\@range-comp\\[\\]-\\@range-textbox\\[\\]-textbox", "css:finder"],
+        ["xpath=//input[@id='s0-1-17-5[2]-@range-comp[]-@range-textbox[]-textbox']", "xpath:attributes"],
+        ["xpath=//span[2]/span/input", "xpath:position"]
+      ],
+      "value": "100"
+    }, {
+      "id": "ba08adfc-ee66-4566-8a21-52c8228428b5",
+      "comment": "",
+      "command": "type",
+      "target": "id=s0-1-17-5[2]-@range-comp[]-@range-textbox[]_1-textbox",
+      "targets": [
+        ["id=s0-1-17-5[2]-@range-comp[]-@range-textbox[]_1-textbox", "id"],
+        ["name=_udhi", "name"],
+        ["css=#s0-1-17-5\\[2\\]-\\@range-comp\\[\\]-\\@range-textbox\\[\\]_1-textbox", "css:finder"],
+        ["xpath=//input[@id='s0-1-17-5[2]-@range-comp[]-@range-textbox[]_1-textbox']", "xpath:attributes"],
+        ["xpath=//span[5]/span/input", "xpath:position"]
+      ],
+      "value": "1000"
+    }, {
+      "id": "f318a2d2-8f5e-4c0d-9977-76f13e14f06d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.adv-form__actions > .btn",
+      "targets": [
+        ["css=.adv-form__actions > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c61c81f7-70bd-41e3-8cf2-836f776bfefb",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,100)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "311fc01c-3bf8-45a8-a36b-fa4877d35555",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,103)",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "57c3e7d2-4e7d-4a53-b919-5de451bbf048",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["345b0993-92a6-4945-86dc-782584438c12"]
+  }],
+  "urls": ["https://www.ebay.ca/"],
+  "plugins": []
+}

@@ -1,0 +1,123 @@
+{
+  "id": "08799ca9-5557-40a6-b2f7-e550055ef7b7",
+  "version": "2.0",
+  "name": "jewleryAuctionAscendingOrder",
+  "url": "https://www.ebay.ca",
+  "tests": [{
+    "id": "94028fd1-bc02-4833-a584-730d0dd0f03b",
+    "name": "T1",
+    "commands": [{
+      "id": "07c5ccac-9c0c-416e-8657-8bdd52e01841",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e8ae6aa7-6635-460b-b9d9-dfdfa60eaf4b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1716x974",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f7e77703-1b4a-4209-9917-cef7095ac5c9",
+      "comment": "",
+      "command": "click",
+      "target": "id=gh-shop-a",
+      "targets": [
+        ["id=gh-shop-a", "id"],
+        ["css=#gh-shop-a", "css:finder"],
+        ["xpath=//button[@id='gh-shop-a']", "xpath:attributes"],
+        ["xpath=//div[@id='gh-shop']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Shop by category')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d82d119a-1868-4a3d-b5c6-5e298f35dc41",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Jewellery & Watches",
+      "targets": [
+        ["linkText=Jewellery & Watches", "linkText"],
+        ["css=td:nth-child(2) > .gh-sbc-parent:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Jewellery & Watches')]", "xpath:link"],
+        ["xpath=//table[@id='gh-sbc']/tbody/tr/td[2]/h3[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.ebay.ca/b/Jewelry-Watches/281/bn_1865273')]", "xpath:href"],
+        ["xpath=//td[2]/h3[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Jewellery & Watches')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ddc1ce00-5731-40fd-a497-e4b1b7aa3a15",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fake-tabs__item:nth-child(2) .srp-format-tabs-h2",
+      "targets": [
+        ["css=.fake-tabs__item:nth-child(2) .srp-format-tabs-h2", "css:finder"],
+        ["xpath=//div[@id='s0-28_1-9-0-1[0]-0-0-6-4']/div/div/div/ul/li[2]/a/h2", "xpath:idRelative"],
+        ["xpath=//a/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Auction')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7545cc6-f36f-41b4-ac74-f3ed102dd43f",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.btn__cell > span",
+      "targets": [
+        ["css=.btn__cell > span", "css:finder"],
+        ["xpath=//span[@id='nid-ibp-1']/button/span/span", "xpath:idRelative"],
+        ["xpath=//span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e7c64aeb-e5df-4344-b632-621b7d272d5a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn__cell > span",
+      "targets": [
+        ["css=.btn__cell > span", "css:finder"],
+        ["xpath=//span[@id='nid-ibp-1']/button/span/span", "xpath:idRelative"],
+        ["xpath=//span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f925f66-e33d-4c84-b427-7faf2f99c88a",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.btn__cell > span",
+      "targets": [
+        ["css=.btn__cell > span", "css:finder"],
+        ["xpath=//span[@id='nid-ibp-1']/button/span/span", "xpath:idRelative"],
+        ["xpath=//span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "00c9802d-1008-4914-a43a-aa5174a91ec7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Time: ending soonest",
+      "targets": [
+        ["linkText=Time: ending soonest", "linkText"],
+        ["css=li:nth-child(2) > .fake-menu-button__item", "css:finder"],
+        ["xpath=//ul[@id='s0-28-9-0-1[0]-0-0-6-4-13-15-content-menu']/li[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ebay.ca/b/Jewelry-Watches/281/bn_1865273?LH_Auction=1&rt=nc&_sop=1')])[2]", "xpath:href"],
+        ["xpath=//span/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Time: ending soonest')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "b76ace02-6bf6-46c3-9afe-d98caa1388c8",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["94028fd1-bc02-4833-a584-730d0dd0f03b"]
+  }],
+  "urls": ["https://www.ebay.ca/"],
+  "plugins": []
+}
