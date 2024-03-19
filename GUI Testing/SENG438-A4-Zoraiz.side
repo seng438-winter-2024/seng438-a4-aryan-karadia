@@ -1,0 +1,164 @@
+{
+  "id": "2eeeb8ec-7d3d-4f7b-be26-d791508fdc3b",
+  "version": "2.0",
+  "name": "SENG438-A4-Zoraiz",
+  "url": "https://www.ebay.ca/",
+  "tests": [{
+    "id": "d0d003a4-c985-4f47-82bf-875418462460",
+    "name": "VerifySearchFunctionality",
+    "commands": [{
+      "id": "ec730e19-6543-4530-9e54-fba25112de63",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ebay.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6ff14e7-fe4a-45ce-bc08-facefbbabf46",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1048",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d0060da6-d722-4150-a2cb-3f84caaf3440",
+      "comment": "",
+      "command": "click",
+      "target": "id=gh-ac",
+      "targets": [
+        ["id=gh-ac", "id"],
+        ["name=_nkw", "name"],
+        ["css=#gh-ac", "css:finder"],
+        ["xpath=//input[@id='gh-ac']", "xpath:attributes"],
+        ["xpath=//div[@id='gh-ac-box2']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc6d6729-f2e4-4503-a755-2ab3330463af",
+      "comment": "",
+      "command": "type",
+      "target": "id=gh-ac",
+      "targets": [
+        ["id=gh-ac", "id"],
+        ["name=_nkw", "name"],
+        ["css=#gh-ac", "css:finder"],
+        ["xpath=//input[@id='gh-ac']", "xpath:attributes"],
+        ["xpath=//div[@id='gh-ac-box2']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "iphone 15"
+    }, {
+      "id": "20a08034-197b-4a04-8cd5-d281789b33b9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gh-search-button__label",
+      "targets": [
+        ["css=.gh-search-button__label", "css:finder"],
+        ["xpath=//button[@id='gh-search-btn']/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Search')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5370f960-262f-4791-9d11-36079bdcbff7",
+      "comment": "Search result loaded for search query",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "261177f7-788f-49fd-b32b-ecd2f8c99892",
+    "name": "ContactUsFormSubmission",
+    "commands": [{
+      "id": "ac98c191-6bfc-44c5-886b-caadda933f95",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ebay.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "176209df-207f-409c-94c0-01dcde56c3ca",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1158x765",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d77edf88-861d-49c1-b94c-79db16e577ef",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Help & Contact",
+      "targets": [
+        ["linkText=Help & Contact", "linkText"],
+        ["css=#gh-p-3 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Help & Contact')]", "xpath:link"],
+        ["xpath=//li[@id='gh-p-3']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.ebay.ca/help/home')]", "xpath:href"],
+        ["xpath=//div/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Help & Contact')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1077cbae-cd6c-4250-a8aa-0126b6c8c8c1",
+      "comment": "",
+      "command": "click",
+      "target": "id=sr-input",
+      "targets": [
+        ["id=sr-input", "id"],
+        ["name=query", "name"],
+        ["css=#sr-input", "css:finder"],
+        ["xpath=//input[@id='sr-input']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/input", "xpath:idRelative"],
+        ["xpath=//form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c77d2cc-e5d7-477a-9b91-a8ba91045252",
+      "comment": "",
+      "command": "type",
+      "target": "id=sr-input",
+      "targets": [
+        ["id=sr-input", "id"],
+        ["name=query", "name"],
+        ["css=#sr-input", "css:finder"],
+        ["xpath=//input[@id='sr-input']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/input", "xpath:idRelative"],
+        ["xpath=//form/div/div/input", "xpath:position"]
+      ],
+      "value": "item not delivered"
+    }, {
+      "id": "27649e1f-b241-48df-af77-a167824e824d",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=sr-input",
+      "targets": [
+        ["id=sr-input", "id"],
+        ["name=query", "name"],
+        ["css=#sr-input", "css:finder"],
+        ["xpath=//input[@id='sr-input']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/input", "xpath:idRelative"],
+        ["xpath=//form/div/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "2514bf74-0aa1-46c3-a4b8-e3b20f756b6f",
+      "comment": "Search result loaded for search query",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "c4a2410b-5ab4-4db9-a467-ea9164db5917",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.samsung.com/", "https://www.ebay.ca/"],
+  "plugins": []
+}
